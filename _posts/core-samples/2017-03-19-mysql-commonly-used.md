@@ -99,6 +99,24 @@ delete from mysql.user where user='root' and host = 'localhsot' #一般drop删�
 
 flush privileges #刷新权限
 ```
+### 用户授权
+#### grant命令简单语法
+```
+grant all privileges on dbname.* to username@localhost identified by 'passwd'
+```
+#### create与grant配合
+```
+create user 'username'@'localhost' identified by '123456'
+grant all on test.* to 'username'@'localhost'
+```
+#### 查看权限
+```
+show grants for username@'localhost'
+```
+
+| grant | all privileges | on dbname.* | to username@localhost|identified by 'passwd' |
+| ------ | ----------- | ----------- | --------------------- | ------------------- |
+| 授权命令 | 对应权限 | 目标:库和表|用户名和客户主机 |用户密码           |
 
 ## mysql常用整理
 - [实践笔记](https://yuud.github.io/mysql/)
