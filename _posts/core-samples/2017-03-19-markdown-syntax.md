@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Jekyll markdown syntax"
-tagline: ""
+title: "简单排版标记语言"
+tagline: "markdown"
 description: "Jekyll markdown syntax"
-category: Jekyll
-tags: [intro, beginner, jekyll, tutorial]
+category: jekyll
+tags: [markdown]
 last_updated: 2015-09-10
 ---
 
