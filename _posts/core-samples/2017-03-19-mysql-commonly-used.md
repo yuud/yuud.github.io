@@ -118,6 +118,63 @@ show grants for username@'localhost'
 | ------ | ----------- | ----------- | --------------------- | ------------------- |
 | 授权命令 | 对应权限 | 目标:库和表|用户名和客户主机 |用户密码           |
 
+### mysql触发器
+当表发生insert、update、delete事件时触发的处理
+#### 触发器的创建
+语法：
+```
+CREATE TRIGGER 触发器名称 BEFFORE|AFTER 触发事件 ON 表名 FOR EACH ROW
+BEGIN
+    触发器程体; #要触发的sql语句：可用顺序，判断，循环等语句实现一般程序需要的逻辑功能
+END
+```
+
+#### 触发器实例
+- _创建表_
+
+```
+MariaDB [test]> create table student(
+    -> id int unsigned auto_increment primary key not null,
+    -> name varchar(50));
+Query OK, 0 rows affected (0.04 sec)
+
+MariaDB [test]> create table s_total
+    -> (total int);
+Query OK, 0 rows affected (0.01 sec)
+```
+
+- _创建触发器student_insert_trigger_
+
+```
+MariaDB [test]> \d $$
+MariaDB [test]> create trigger student_insert_trigger after insert on student
+    -> for each row BEGIN update s_total set total=total+1;
+    -> END$$
+Query OK, 0 rows affected (0.02 sec)
+```
+
+- _创建触发器student_delete_trigger_
+
+```
+MariaDB [test]> \d $$
+
+MariaDB [test]> create trigger student_delete_trigger after delete on student for each row
+    -> BEGIN
+    -> update s_total set total=total-1;
+    -> END;
+    -> $$
+```
+
+#### 删除触发器
+```
+DROP TRIGGER 触发器名
+```
+
+#### 查看触发器
+```
+MariaDB [test]> show triggers\G
+```
+
 ## mysql常用整理
 - [实践笔记](https://yuud.github.io/mysql/)
 
