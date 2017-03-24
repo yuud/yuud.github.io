@@ -175,6 +175,69 @@ DROP TRIGGER 触发器名
 MariaDB [test]> show triggers\G
 ```
 
+### mysql存储过程
+#### 概述
+存储过程是事先经过编译并存储在数据库中的一段sql语句集合。
+存储过程与函数的区别：
+- 函数必须有返回值而存储过程没有
+- 存储过程的参数可以是IN、OUT、INOUT类型而函数的参数只能是IN
+优点：
+- 存储过程只在创建时进行编译;而sql语句每执行一次就编译一次，所以使用存储过程可以提高数据库执行速度
+- 简化复杂操作，结合事务一起封装
+- 复用好
+- 安全性高，可指定存储过程的使用权
+
+#### 创建与调用
+
+__IN参数__
+```
+#------IN------
+create procedure a2(IN a int)
+BEGIN
+declare i int default 1;
+while(i<a) do
+insert into t1 values (i,md5(i));
+set i=i+1;
+end while;
+END
+```
+
+__OUT参数__
+```
+#------OUT------
+create procedure p2(OUT p1 INT)
+BEGIN
+select count(*) into p1 from mysql.user;
+END
+```
+
+__IN & OUT参数__
+```
+#------IN & OUT------
+#统计指定部门工资超过5000的总人数
+create procedure count_num(IN p1 varchar(50),IN p2 float(10,2),OUT p3 int)
+BEGIN
+select count(*) into p3 from employee where post = p1 and salary > p2;
+END
+
+call count_num('hr',5000,@a);
+
+select @a;
+```
+
+__INOUT参数__
+```
+#------INOUT------
+create procedure proce_param_inout(inout p1 int)
+BEGIN
+    if(p1 is not null) then
+        set p1=p1+1;
+    else
+        select 100 into p1;
+    end if;
+END
+```
+
 ## mysql常用整理
 - [实践笔记](https://yuud.github.io/mysql/)
 

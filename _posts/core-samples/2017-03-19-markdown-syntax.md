@@ -189,24 +189,24 @@ Or you can use a [shortcut][] reference, which links the text "shortcut" to the 
 
 To include an image, just put a "!" in front of a text link:
 
-	![Minion](https://octodex.github.com/images/minion.png)
+	![Minion](http://0101520.com/images/minion.png)
 
 output:
-![Minion](images/minion.png)
+![Minion](http://0101520.com/images/minion.png)
 
 The alternate text will show up if the brower can't load the image.
 You can also use a title if you want, like this:
 
-	![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+	![Stormtroopocat](http://0101520.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 output:
 
-![Stormtroopocat](images/stormtroopocat.jpg "The Stormtroopocat")
+![Stormtroopocat](http://0101520.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
 Like links, Images also have a footnote style syntax
 
 	![Alt text][id]
-	[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+	[id]: http://0101520.com/images/dojocat.jpg  "The Dojocat"
 
 output:
 
@@ -214,7 +214,7 @@ output:
 
 With a reference later in the document defining the URL location:
 
-[id]: images/dojocat.jpg  "The Dojocat"
+[id]: http://0101520.com/images/dojocat.jpg  "The Dojocat"
 
 ## emoji
 
