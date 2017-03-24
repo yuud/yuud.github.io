@@ -239,7 +239,7 @@ END
 ```
 
 ## mysql常用整理
-- [实践笔记](https://yuud.github.io/mysql/)
+- [实践笔记](http://0101520.com/mysql/)
 
 ## Next Steps
 Please take a look at [{{ site.categories.api.first.title }}]({{ BASE_PATH }}{{ site.categories.api.first.url }})
