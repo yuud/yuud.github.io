@@ -192,7 +192,7 @@ To include an image, just put a "!" in front of a text link:
 	![Minion](https://octodex.github.com/images/minion.png)
 
 output:
-![Minion](https://octodex.github.com/images/minion.png)
+![Minion](images/minion.png)
 
 The alternate text will show up if the brower can't load the image.
 You can also use a title if you want, like this:
@@ -201,7 +201,7 @@ You can also use a title if you want, like this:
 
 output:
 
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+![Stormtroopocat](images/stormtroopocat.jpg "The Stormtroopocat")
 
 Like links, Images also have a footnote style syntax
 
@@ -214,7 +214,7 @@ output:
 
 With a reference later in the document defining the URL location:
 
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+[id]: images/dojocat.jpg  "The Dojocat"
 
 ## emoji
 
