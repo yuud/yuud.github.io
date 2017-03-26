@@ -244,7 +244,7 @@ END
 - 使用GTID完成基于事务的复制
  mysql支持半同步复制
 
-[](http://0101520.com/images/mysql_01.png)
+![](http://0101520.com/images/mysql_01.png)
 
 ### 基于日志点的复制
 
@@ -861,11 +861,11 @@ SSL_VERIFY_SERVER_CERTIFICATE: NO
 ### 多源复制
 从多个master主机复制数据
 
-[](http://0101520.com/images/mysql_02.png)
+![](http://0101520.com/images/mysql_02.png)
 
 ***
 
-[](http://0101520.com/images/mysql_03.png)
+![](http://0101520.com/images/mysql_03.png)
 
 #### 重开一台master主机192.168.10.13
 1. 用同样的方法设置
